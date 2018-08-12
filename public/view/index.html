@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>CRYPTO ATM</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	 <script>
+  	 $.ajax({url: "http://localhost:12345/getMerchant", success: function(result){
+    	 for(i = 0; i < result.length; i++) {
+        $("#shopstoBuy").append('<div class="media text-muted pt-3"><div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray"><div class="d-flex justify-content-between align-items-center w-100"><strong class="text-gray-dark">' + result[i].name + '</strong><a href="/qrcode/'+ result[i].id + '"><span class="badge badge-direction">Directions</span></a></div><span class="d-block">User Id: @' + result[i].id + '</span></div></div>')
+        }
+    }});
+  </script>
+  <style>
+    /* Divya Ranjan */
+    /* divya.rj@throughbit.com */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i');
+    * 
+    {
+    	font-family: 'Open Sans', sans-serif;
+    	letter-spacing: 1px;
+    	overflow: none;
+    	opacity: 1;
+    }
+    html,
+    body
+    {
+        height: 100%;
+    	margin: 0;
+    	padding: 0;
+    	background-color: #171728;
+    	font-family: 'Open Sans', sans-serif;
+    	overflow-x: hidden;
+    	color: #ffffff;
+    }
+    .bg-white,
+    .media-body
+    {
+    	color: #151326 !important;
+    }
+    .media
+    {
+    	background: #ffffff;
+    	margin: 10px 0;
+    	padding-left: 20px;
+    	box-shadow: 0 10px 20px 0 rgba(7,7,21,0.3);
+    }
+    /* Navigation */
+    .badge-direction,
+    .badge-eth
+    {
+    	background: #22007C;
+    	padding-top: 10px; 
+    	padding-bottom: 10px;
+    	padding-left: 5px;
+    	padding-right: 5px;
+    	margin-right: 20px;
+    	color: #ffffff;
+    }
+    .merchant
+    {
+    	background: #ffffff;
+    	box-shadow: 0 10px 20px 0 rgba(7,7,21,0.3);
+    	padding: 20px;
+    	margin: 20px 30px;
+    	color: #151326;
+    }
+    .data
+    {
+    	margin-top: 12px;
+    	padding-left:50px;
+    }
+    p.address
+    {
+    	font-size: 12px;
+    	letter-spacing: 0.5px;
+    	line-height: 170%;
+    	opacity: 0.6;
+    	font-weight: 800;
+    }
+    .btn
+    {
+    	border-radius: none;
+    }
+    .outline-btn
+    {
+    	background: #ffffff !important;
+    	color: #22007C;
+    	border: 1px solid #22007C;
+    }
+    .btn-primary
+    {
+    	background: #22007C;
+    	font-size: 12px;
+    }
+    img.base64
+    {
+        display: block;
+        width: auto;
+        height: 140px;
+    }
+    .merchant .text-gray-dark
+    {
+    	font-size: 12px;
+    }
+    .badge-eth
+    {
+    	background: #0D00A4;
+    }
+    .right
+    {
+    	display: inline-block;
+    }
+    h4.title
+    {
+    	font-size: 10px;
+    	padding: 10px 0;
+    	text-align: left;
+    }
+    .nav-custom 
+    {
+    	min-height: 75px;
+    	background-color: rgb(23, 23, 40);	
+    	box-shadow: 0 10px 20px 0 rgba(7,7,21,0.3);
+    	margin-bottom: 20px;
+        z-index: 1030;
+    }
+    .nav-custom .nav-item
+    {
+    	margin-right: 10px;
+    }
+    .nav-custom .nav-item a,
+    .element-box ul.element-menu li a,
+    .content-cards ul.element-menu li a,
+    #navigation-switch ul.nav li a
+    {
+    	color: #ffffff;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1.8px;
+        opacity: 0.4;
+    }
+    #navigation-switch ul.nav li a.active
+    {
+    	color: #493dae;
+    }
+    .nav-custom .nav-item a.active
+    {
+    	opacity: 1;
+    }
+    .nav-link 
+    {
+        padding: 1rem .8rem;
+    }
+    .user-image img 
+    {
+        height: 35px;
+        width: auto;
+        border-radius: 8px;
+        margin: auto;
+        -webkit-box-shadow: inset -1px 0px 300px 2px rgba(0,0,0,0.75);
+        -moz-box-shadow: inset -1px 0px 300px 2px rgba(0,0,0,0.75);
+        box-shadow: inset -1px 0px 300px 2px rgba(0,0,0,0.75);
+    }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm nav-custom">
+  <a class="navbar-brand" href="#">
+    <img src="data:image/png;base64,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" alt="Logo" style="height: 15px;">
+  </a>
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Cash</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Crypto</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Merchant</a>
+  </li>
+    <li class="nav-item user-image">
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg">
+    </li>
+  </ul>
+</nav>
+      <div class="my-3 p-3" id="shopstoBuy">
+        <h6 class="pb-2 mb-0">Shops to Buy cryptocurrency</h6>
+        
+      </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

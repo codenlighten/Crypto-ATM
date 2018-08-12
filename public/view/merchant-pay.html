@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>CRYPTO ATM</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	 <link rel="stylesheet" href="../assets/css/style.css">
+	   <style>
+    /* Divya Ranjan */
+    /* divya.rj@throughbit.com */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i');
+    * 
+    {
+    	font-family: 'Open Sans', sans-serif;
+    	letter-spacing: 1px;
+    	overflow: none;
+    	opacity: 1;
+    }
+    html,
+    body
+    {
+        height: 100%;
+    	margin: 0;
+    	padding: 0;
+    	background-color: #171728;
+    	font-family: 'Open Sans', sans-serif;
+    	overflow-x: hidden;
+    	color: #ffffff;
+    }
+    .bg-white,
+    .media-body
+    {
+    	color: #151326 !important;
+    }
+    .media
+    {
+    	background: #ffffff;
+    	margin: 10px 0;
+    	padding-left: 20px;
+    	box-shadow: 0 10px 20px 0 rgba(7,7,21,0.3);
+    }
+    /* Navigation */
+    .badge-direction,
+    .badge-eth
+    {
+    	background: #22007C;
+    	padding-top: 10px; 
+    	padding-bottom: 10px;
+    	padding-left: 5px;
+    	padding-right: 5px;
+    	margin-right: 20px;
+    	color: #ffffff;
+    }
+    .merchant
+    {
+    	background: #ffffff;
+    	box-shadow: 0 10px 20px 0 rgba(7,7,21,0.3);
+    	padding: 20px;
+    	margin: 20px 30px;
+    	color: #151326;
+    }
+    .data
+    {
+    	margin-top: 12px;
+    	padding-left:50px;
+    }
+    p.address
+    {
+    	font-size: 12px;
+    	letter-spacing: 0.5px;
+    	line-height: 170%;
+    	opacity: 0.6;
+    	font-weight: 800;
+    }
+    .btn
+    {
+    	border-radius: none;
+    }
+    .outline-btn
+    {
+    	background: #ffffff !important;
+    	color: #22007C;
+    	border: 1px solid #22007C;
+    }
+    .btn-primary
+    {
+    	background: #22007C;
+    	font-size: 12px;
+    }
+    img.base64
+    {
+        display: block;
+        width: auto;
+        height: 140px;
+    }
+    .merchant .text-gray-dark
+    {
+    	font-size: 12px;
+    }
+    .badge-eth
+    {
+    	background: #0D00A4;
+    }
+    .right
+    {
+    	display: inline-block;
+    }
+    h4.title
+    {
+    	font-size: 10px;
+    	padding: 10px 0;
+    	text-align: left;
+    }
+    .nav-custom 
+    {
+    	min-height: 75px;
+    	background-color: rgb(23, 23, 40);	
+    	box-shadow: 0 10px 20px 0 rgba(7,7,21,0.3);
+    	margin-bottom: 20px;
+        z-index: 1030;
+    }
+    .nav-custom .nav-item
+    {
+    	margin-right: 10px;
+    }
+    .nav-custom .nav-item a,
+    .element-box ul.element-menu li a,
+    .content-cards ul.element-menu li a,
+    #navigation-switch ul.nav li a
+    {
+    	color: #ffffff;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1.8px;
+        opacity: 0.4;
+    }
+    #navigation-switch ul.nav li a.active
+    {
+    	color: #493dae;
+    }
+    .nav-custom .nav-item a.active
+    {
+    	opacity: 1;
+    }
+    .nav-link 
+    {
+        padding: 1rem .8rem;
+    }
+    .user-image img 
+    {
+        height: 35px;
+        width: auto;
+        border-radius: 8px;
+        margin: auto;
+        -webkit-box-shadow: inset -1px 0px 300px 2px rgba(0,0,0,0.75);
+        -moz-box-shadow: inset -1px 0px 300px 2px rgba(0,0,0,0.75);
+        box-shadow: inset -1px 0px 300px 2px rgba(0,0,0,0.75);
+    }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm nav-custom">
+  <a class="navbar-brand" href="#">
+    <img src="data:image/png;base64,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" alt="Logo" style="height: 15px;">
+  </a>
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Cash</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Crypto</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Merchant</a>
+  </li>
+    <li class="nav-item user-image">
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg">
+    </li>
+  </ul>
+</nav>
+<div class="row">
+  <div class="col-md-12 merchant">
+    <strong class="text-gray-dark">Shafeek General Store</strong>
+    <div class="row">
+      <div class="col-md-1">
+      <div class="qr-code">
+      <img class="base64" src="data:image/png;base64,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">
+      </div>
+      </div>
+      <div class="col-md-10 data">
+        <p class="address">
+          No 734, 15th A Main, 22nd Cross, Club Raod, HSR Layout, 3rd Sector, Bengaluru, Karnataka 560102
+        </p>
+        <button type="button" class="btn btn-primary">Send Ether</button>
+        or <button type="button" class="btn btn-primary outline-btn">Buy Ether</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -14,4 +14,10 @@ module.exports = (app) => {
     });
     res.end();
   });
+  app.get('/home', function(req, res) {
+     res.sendFile('/Users/dhavalchauhan/Desktop/ethindia/cryptofy-ethindia/public/view/index.html');
+  });
+  app.get('/qrcode/:id', function(req, res) {
+     res.sendFile('/Users/dhavalchauhan/Desktop/ethindia/cryptofy-ethindia/public/view/merchant-pay.html');
+  });
 };
